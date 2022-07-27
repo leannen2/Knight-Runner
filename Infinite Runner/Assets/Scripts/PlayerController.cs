@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       score = 0;
+        score = 0;
         //scoreDisplay.text = score.ToString();
     }
 
