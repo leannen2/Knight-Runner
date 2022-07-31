@@ -12,21 +12,31 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //rb.AddForce(new Vector3(moveSpeed, 0f, 0f));
+        //Vector3 mover = new Vector3(moveSpeed, 0f, 0f);
+        //rb.AddForce(mover);
         transform.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
     }
-    
+
+    void FixedUpdate()
+    {
+        //Vector3 mover = new Vector3(moveSpeed, 0f, 0f);
+        //rb.AddForce(mover);
+        //rb.AddForce(new Vector3(moveSpeed, 0f, 0f));
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.layer != LayerMask.NameToLayer("Ground"))
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
+            Debug.Log("hit");
             moveSpeed = -1 * moveSpeed;
+            Debug.Log(moveSpeed);
         }
         
     }
