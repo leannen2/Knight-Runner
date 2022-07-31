@@ -18,8 +18,8 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(new Vector3(moveSpeed, 0f, 0f));
-        //transform.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
+        //rb.AddForce(new Vector3(moveSpeed, 0f, 0f));
+        transform.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
