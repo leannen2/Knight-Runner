@@ -7,12 +7,16 @@ public class Monster : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
     [SerializeField]
+    private float moveLeftSpeed;
+    [SerializeField]
+    private float moveRightSpeed;
+
     private float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        moveSpeed = moveLeftSpeed;
     }
 
     // Update is called once per frame
@@ -35,10 +39,27 @@ public class Monster : MonoBehaviour
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
             Debug.Log("hit");
-            moveSpeed = -1 * moveSpeed;
+            if (moveSpeed == moveLeftSpeed)
+            {
+                moveSpeed = moveRightSpeed;
+            }
+            else if (moveSpeed == moveRightSpeed)
+            {
+                moveSpeed = moveLeftSpeed;
+            }
             Debug.Log(moveSpeed);
         }
         
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("trigger");
+        if (collision.gameObject.tag == "Despawn")
+        {
+            Destroy(gameObject);
+            Debug.Log("despawn");
+        }
+    }
+
 }

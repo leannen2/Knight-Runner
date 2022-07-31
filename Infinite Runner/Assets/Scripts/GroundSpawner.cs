@@ -23,7 +23,7 @@ public class GroundSpawner : MonoBehaviour
         if (Time.time >= nextSpawnTime)
         {
             int randGround = Random.Range(0, 3);
-            GameObject.Instantiate(groundPrefabs[1]);
+            GameObject.Instantiate(groundPrefabs[randGround]);
             nextSpawnTime = Time.time + spawnTime;
         }
     }
