@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
+    [SerializeField] private float movingspeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-5 * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(movingspeed * Time.deltaTime, 0f, 0f);
         if (transform.position.x < -30)
         {
             Destroy(gameObject);
