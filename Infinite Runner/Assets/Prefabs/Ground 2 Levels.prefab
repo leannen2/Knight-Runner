@@ -1080,6 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2fc8734f03da147878480ecd816f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingspeed: -5
 --- !u!1839735485 &-8117992676506349794
 Tilemap:
   m_ObjectHideFlags: 0

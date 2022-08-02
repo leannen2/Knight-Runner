@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7667947459557518469, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
+      propertyPath: movingspeed
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 9030594274765702650, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: m_Name
       value: Flat Ground
@@ -491,6 +495,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6730458509923901790, guid: 6fedf14dc04b4754bb4b49299540cc75, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6730458509923901791, guid: 6fedf14dc04b4754bb4b49299540cc75, type: 3}
       propertyPath: m_Name
       value: MonsterSpawner
@@ -624,7 +632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073168653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.54, y: 1.2, z: 0}
+  m_LocalPosition: {x: -0.32, y: -1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -646,3 +654,4 @@ MonoBehaviour:
   rb: {fileID: 2073168654}
   upForce: 12
   downForce: 5
+  scoreDisplay: {fileID: 0}
