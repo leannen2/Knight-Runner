@@ -324,6 +324,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8252532106903268900, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252532106903268900, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252532106903268900, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8252532107226567539, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -412,8 +424,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8252532107822030785, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252532107822030785, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252532107822030785, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252532107822030785, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+--- !u!114 &476037238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8252532107822030784, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+  m_PrefabInstance: {fileID: 476037237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &508044565
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,4 +955,4 @@ MonoBehaviour:
   rb: {fileID: 2073168654}
   upForce: 12
   downForce: 5
-  scoreDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 476037238}

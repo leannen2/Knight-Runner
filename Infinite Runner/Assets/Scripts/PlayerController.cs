@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         score = 0;
+        scoreDisplay.text = score.ToString();
 
         Pause = false;
 
