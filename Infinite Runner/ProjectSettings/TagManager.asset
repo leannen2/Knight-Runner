@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Despawn
   - Monster
+  - GameOver
   layers:
   - Default
   - TransparentFX

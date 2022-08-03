@@ -1,3 +1,4 @@
+//Written by Leanne Nguyen
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +39,7 @@ public class Monster : MonoBehaviour
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
-            Debug.Log("hit");
+            //Debug.Log("hit");
             if (moveSpeed == moveLeftSpeed)
             {
                 moveSpeed = moveRightSpeed;
@@ -47,18 +48,18 @@ public class Monster : MonoBehaviour
             {
                 moveSpeed = moveLeftSpeed;
             }
-            Debug.Log(moveSpeed);
+            //Debug.Log(moveSpeed);
         }
         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger");
+        //Debug.Log("trigger");
         if (collision.gameObject.tag == "Despawn")
         {
             Destroy(gameObject);
-            Debug.Log("despawn");
+            //Debug.Log("despawn");
         }
     }
 

@@ -83,6 +83,11 @@ public class PlayerController : MonoBehaviour
 
         //If the player falls out of the world we want to end the game.
             //GameStateManager.GameOver();
+        // Leanne: Call Game Over when player gets pushed off the screen
+        if (collision.gameObject.tag == "Despawn")
+        {
+            Debug.Log("Game Over");
+        }
        
     }
 }
