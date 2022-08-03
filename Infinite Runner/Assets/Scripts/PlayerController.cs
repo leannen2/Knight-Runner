@@ -14,11 +14,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Text scoreDisplay; //This is a Unity UI Text Object that you can display the score in by setting the text field of this object.
 
+    [Header("Attack")]
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float range;
+    [SerializeField] private int damage;
+
+    [Header("Collider")]
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
+
+    private Animator anim;
     private int score; //An internal field to store the score in.
+
 
     private bool Pause;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         score = 0;
         scoreDisplay.text = score.ToString();
@@ -29,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
         downForce = 5;
 
+        anim = GetComponent<Animator>();
 
         //Here is where you should initalize fields.
     }
@@ -56,6 +68,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             {
                 //attack function
+                anim.SetTrigger("Attack");
+
             }
 
     }
@@ -68,7 +82,8 @@ public class PlayerController : MonoBehaviour
         //If the player runs into a pillar object we want to end the game.
         if(collision.gameObject.tag == "Monster")
         {
-            //GameStateManager.GameOver();
+            GameStateManager.GameOver();
+
         }
       
     }
@@ -91,4 +106,22 @@ public class PlayerController : MonoBehaviour
         }
        
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right*range*transform.localScale.x*colliderDistance, 
+        new Vector3(boxCollider.bounds.size.x*range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, 0);
+        return raycastHit.collider != null;
+    }
+
+    private void Damage()
+    {
+        
+    }   
 }

@@ -55,7 +55,7 @@ public class GameStateManager : MonoBehaviour
         //PillarSpawner.Swtich = 0;
         //OnGameOver();
         //This invokes the game over screen - here we are calling all the methods that subscribed to this action. 
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 
     public static void Restart()

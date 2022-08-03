@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
         GameStateManager.OnGameOver += Open;
 
         //Make sure this object is not visible when the game starts
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
         
     }
 
@@ -38,7 +38,7 @@ public class Menu : MonoBehaviour
     public void Restart()
     {
         //Add code here to restart the game
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameScreen");
       
     }
 
