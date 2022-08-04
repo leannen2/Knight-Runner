@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // Leanne: Call Game Over when player gets pushed off the screen
         if (collision.gameObject.tag == "Despawn")
         {
-            Debug.Log("Game Over");
+            GameStateManager.GameOver();
         }
        
     }

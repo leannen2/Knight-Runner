@@ -14,7 +14,8 @@ public class GroundSpawner : MonoBehaviour
     void Start()
     {
         nextSpawnTime = Time.time + spawnTime;
-        GameObject.Instantiate(groundPrefabs[0]);
+        int randGround = Random.Range(0, 3);
+        GameObject.Instantiate(groundPrefabs[randGround]);
     }
 
     // Update is called once per frame

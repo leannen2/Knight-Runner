@@ -716,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6730458509923901784, guid: 6fedf14dc04b4754bb4b49299540cc75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.88
+      value: 12.95
       objectReference: {fileID: 0}
     - target: {fileID: 6730458509923901784, guid: 6fedf14dc04b4754bb4b49299540cc75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -893,7 +893,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1014,7 +1014,6 @@ MonoBehaviour:
   damage: 0
   colliderDistance: 1
   boxCollider: {fileID: 2073168655}
-  field: {fileID: 0}
 --- !u!95 &2073168659
 Animator:
   serializedVersion: 4
