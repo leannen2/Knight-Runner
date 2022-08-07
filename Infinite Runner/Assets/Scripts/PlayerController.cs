@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Text scoreDisplay; //This is a Unity UI Text Object that you can display the score in by setting the text field of this object.
 
     [Header("Attack")]
+    [SerializeField] private GameObject attackField;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private int damage;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        attackField.SetActive(false);
         score = 0;
         scoreDisplay.text = score.ToString();
 
@@ -51,27 +53,35 @@ public class PlayerController : MonoBehaviour
 
         //Detect if the key is pressed down.
         if(Input.GetKeyDown(KeyCode.W))
-            {
-                //jump
-                rb.velocity = Vector2.up * upForce * 3;
-            }
+        {
+            //jump
+            rb.velocity = Vector2.up * upForce * 3;
+        }
             //Detect if the key is pressed down.
         if (Input.GetKeyDown(KeyCode.S))
-            {
-                //Dash
-                rb.velocity = Vector2.down * downForce * 3;
-            }
+        {
+            //Dash
+            rb.velocity = Vector2.down * downForce * 3;
+        }
         if (Input.GetKeyDown(KeyCode.P))
-            {
+        {
                 
-            }
+        }
         if (Input.GetMouseButtonDown(0))
-            {
-                //attack function
-                anim.SetTrigger("Attack");
+        {
+            //attack function
+            anim.SetTrigger("Attack");
+            StartCoroutine(Attack());
+        }
 
-            }
+    }
 
+    // Activates the attack field and then deactivates it
+    IEnumerator Attack() 
+    {
+        attackField.SetActive(true);
+        yield return new WaitForSeconds(1);
+        attackField.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
