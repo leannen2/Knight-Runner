@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster : BaseMonster
 {
-    [SerializeField]
-    private Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
+    //[SerializeField]
+    //private Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
     [SerializeField]
     private float moveLeftSpeed;
     [SerializeField]
@@ -51,16 +51,6 @@ public class Monster : MonoBehaviour
             //Debug.Log(moveSpeed);
         }
         
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log("trigger");
-        if (collision.gameObject.tag == "Despawn")
-        {
-            Destroy(gameObject);
-            //Debug.Log("despawn");
-        }
     }
 
 }

@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
 
     private Animator anim;
-    private int score; //An internal field to store the score in.
+    private float score; //An internal field to store the score in.
 
 
     private bool Pause;
@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Attack");
             StartCoroutine(Attack());
         }
+        score += Time.deltaTime;
+        scoreDisplay.text = ((int)score).ToString();
 
     }
 
