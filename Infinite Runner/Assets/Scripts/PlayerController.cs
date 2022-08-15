@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float score; //An internal field to store the score in.
 
-
     private bool Pause;
     // Start is called before the first frame update
     void Awake()
