@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager _instance; //This class is a Singleton - We will also discuss this pattern later in this class.
 
+    [SerializeField]
+    private Text highScoreDisplay;
 
+    //public static float highScore;
 
 
 
@@ -56,6 +60,7 @@ public class GameStateManager : MonoBehaviour
         //OnGameOver();
         //This invokes the game over screen - here we are calling all the methods that subscribed to this action. 
         SceneManager.LoadScene(0);
+
     }
 
     public static void Restart()
@@ -66,5 +71,17 @@ public class GameStateManager : MonoBehaviour
         //Effectively re-initalizing them to their basic starting state.
         SceneManager.LoadScene(0);
     }
-
+    
+    public static void TogglePause()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        } 
+        else
+        {
+            Time.timeScale = 0;
+        }
+        
+    }
 }

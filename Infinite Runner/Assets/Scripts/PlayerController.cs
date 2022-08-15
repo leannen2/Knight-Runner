@@ -63,9 +63,9 @@ public class PlayerController : MonoBehaviour
             //Dash
             rb.velocity = Vector2.down * downForce * 3;
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-                
+            GameStateManager.TogglePause();
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Attack");
             StartCoroutine(Attack());
         }
+        
+        // increases score with the amount of time that has passed since the last update
         score += Time.deltaTime;
         scoreDisplay.text = ((int)score).ToString();
 
@@ -94,6 +96,7 @@ public class PlayerController : MonoBehaviour
         //If the player runs into a pillar object we want to end the game.
         if(collision.gameObject.tag == "Monster")
         {
+            SetHighScore();
             GameStateManager.GameOver();
 
         }
@@ -114,6 +117,7 @@ public class PlayerController : MonoBehaviour
         // Leanne: Call Game Over when player gets pushed off the screen
         if (collision.gameObject.tag == "Despawn")
         {
+            SetHighScore();
             GameStateManager.GameOver();
         }
        
@@ -136,4 +140,13 @@ public class PlayerController : MonoBehaviour
     {
         
     }   
+
+    private void SetHighScore()
+    {
+        if (score > PlayerPrefs.GetFloat("HighScore"))
+        {
+            PlayerPrefs.SetFloat("HighScore", score);
+        }
+        
+    }
 }
