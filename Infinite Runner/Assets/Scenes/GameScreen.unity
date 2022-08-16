@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1558367456999144199, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486470819843464492, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7667947459557518469, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: movingspeed
       value: -5
@@ -314,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 9030594274765702650, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: m_Name
       value: Flat Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030594274765702650, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}

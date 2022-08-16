@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float score; //An internal field to store the score in.
 
+    private bool jump;//jumping limitation
+
     private bool Pause;
     // Start is called before the first frame update
     void Awake()
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
+        jump = true;
+
         //Here is where you should initalize fields.
     }
 
@@ -54,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
             //jump
-            rb.velocity = Vector2.up * upForce * 3;
+            Jump();
         }
             //Detect if the key is pressed down.
         if (Input.GetKeyDown(KeyCode.S))
@@ -120,6 +124,10 @@ public class PlayerController : MonoBehaviour
             GameStateManager.GameOver();
         }
        
+        if(collision.gameObject.tag == "Ground")
+        {
+            jump = true;
+        }
     }
 
     private void OnDrawGizmos()
@@ -147,5 +155,19 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetFloat("HighScore", score);
         }
         
+    }
+
+    private void Jump()
+    {
+        if(jump==true)
+        {
+            rb.velocity = Vector2.up * upForce * 3;
+            jump = false;
+        }
+
+        else
+        {
+            return;
+        }    
     }
 }

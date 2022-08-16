@@ -9,6 +9,7 @@ TagManager:
   - Despawn
   - Monster
   - GameOver
+  - Ground
   layers:
   - Default
   - TransparentFX
