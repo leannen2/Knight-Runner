@@ -8,14 +8,12 @@ using UnityEngine.UI;
 public class GameStateManager : MonoBehaviour
 {
     public static Action OnGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
-    public static float PillarMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
+    //public static float PillarMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
     
     //public static GameObject menu_ref;
 
-    [SerializeField]
-    private GameObject GameOverScreen; //A reference to the GameObject that is the GameOver UI Screen
-    [SerializeField]
-    private float pillarMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
+    //[SerializeField]
+    //private float pillarMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
 
     private static GameStateManager _instance; //This class is a Singleton - We will also discuss this pattern later in this class.
 
@@ -72,15 +70,17 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     
-    public static void TogglePause()
+    public static void TogglePause(GameObject pauseScreen)
     {
         if (Time.timeScale == 0)
         {
+            pauseScreen.gameObject.SetActive(false);
             Time.timeScale = 1;
         } 
         else
         {
             Time.timeScale = 0;
+            pauseScreen.gameObject.SetActive(true);
         }
         
     }
