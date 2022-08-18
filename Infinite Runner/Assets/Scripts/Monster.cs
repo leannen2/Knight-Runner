@@ -14,9 +14,13 @@ public class Monster : BaseMonster
 
     private float moveSpeed;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetInteger("AnimState", 2);
         moveSpeed = moveLeftSpeed;
     }
 
@@ -39,14 +43,18 @@ public class Monster : BaseMonster
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Box"))
         {
+            SpriteRenderer renderer;
+            renderer = GetComponent<SpriteRenderer>();
             //Debug.Log("hit");
             if (moveSpeed == moveLeftSpeed)
             {
                 moveSpeed = moveRightSpeed;
+                renderer.flipX = true;
             }
             else if (moveSpeed == moveRightSpeed)
             {
                 moveSpeed = moveLeftSpeed;
+                renderer.flipX = false;
             }
             //Debug.Log(moveSpeed);
         }

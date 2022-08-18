@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject pauseScreen;
     //This method gets called when the object is first created. It will get called even if the object is disabled.
     public void Awake()
     {
@@ -39,7 +41,8 @@ public class Menu : MonoBehaviour
     {
         //Add code here to restart the game
         SceneManager.LoadScene("GameScreen");
-      
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
     }
 
     public static void Quit()
@@ -48,11 +51,9 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public static void Resume()
+    public void Resume()
     {
-        //pause and resume
-        Time.timeScale = 1;
-        //PillarSpawner.Swtich = 1;
+        GameStateManager.TogglePause(pauseScreen);
     }
 
 }

@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour
     private float upForce; //This is the force that we will want to apply to the rigidbody
     [SerializeField]
     private float downForce;
+
+    [Header("Score")]
     [SerializeField]
     private Text scoreDisplay; //This is a Unity UI Text Object that you can display the score in by setting the text field of this object.
+    private float score; //An internal field to store the score in.
 
     [Header("Attack")]
     [SerializeField] private GameObject attackField;
@@ -25,10 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
 
     private Animator anim;
-    private float score; //An internal field to store the score in.
 
     private bool jump;//jumping limitation
 
+    [Header("Pause Menu")]
+    [SerializeField]
+    private GameObject pauseScreen;
     private bool Pause;
     // Start is called before the first frame update
     void Awake()
@@ -68,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameStateManager.TogglePause();
+            GameStateManager.TogglePause(pauseScreen);
         }
         if (Input.GetMouseButtonDown(0))
         {
