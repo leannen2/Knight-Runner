@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseMonster : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
+    protected Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
 
     // Start is called before the first frame update
     void Start()
