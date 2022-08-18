@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 63
+  controlID: 109
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 64
+  controlID: 110
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 65
+  controlID: 111
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,9 +336,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 50faffff
-      m_LastClickedID: -1456
-      m_ExpandedIDs: 56faffff60faffff62faffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 00fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -438,7 +438,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -3.812469, y: -4.6781116, z: 0.021715712}
     speed: 2
-    m_Value: {x: -3.5993767, y: -4.7647758, z: 0.026946185}
+    m_Value: {x: -3.812469, y: -4.6781116, z: 0.021715712}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 12.146261
     speed: 2
-    m_Value: 11.623217
+    m_Value: 12.146261
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -822,22 +822,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Nero\Desktop\infinite-runner\Infinite Runner
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86660000
-    m_LastClickedID: 26246
-    m_ExpandedIDs: 000000008666000000ca9a3b
+    m_SelectedIDs: fc650000
+    m_LastClickedID: 26108
+    m_ExpandedIDs: 00000000c665000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -865,7 +865,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086660000
+    m_ExpandedIDs: 00000000c6650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300006271000082660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
