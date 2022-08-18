@@ -309,11 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558367456999144199, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3486470819843464492, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7667947459557518469, guid: d7548e8a18d9a1942abace394b2fdb5a, type: 3}
       propertyPath: movingspeed

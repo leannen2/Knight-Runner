@@ -108,13 +108,15 @@ public class PlayerController : MonoBehaviour
             GameStateManager.GameOver();
 
         }
-      
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            jump = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //score = score +1;
-        //scoreDisplay.text = score.ToString();
 
         //This method gets called when this object collides with another object that has it's collider set to "trigger" mode.
 
@@ -127,11 +129,6 @@ public class PlayerController : MonoBehaviour
         {
             SetHighScore();
             GameStateManager.GameOver();
-        }
-       
-        if(collision.gameObject.tag == "Ground")
-        {
-            jump = true;
         }
     }
 
