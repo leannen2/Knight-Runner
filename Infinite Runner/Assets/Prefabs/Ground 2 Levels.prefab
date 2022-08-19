@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 4760669191924740168}
   m_Layer: 6
   m_Name: Box Collider Row 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 4501602171099218548}
   m_Layer: 6
   m_Name: Box Collider Row 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: -8117992676506349794}
   m_Layer: 3
   m_Name: Ground 2 Levels
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

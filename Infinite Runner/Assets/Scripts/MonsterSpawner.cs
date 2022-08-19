@@ -6,7 +6,7 @@ using UnityEngine;
 public class MonsterSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject monsterPrefab;
+    private List<GameObject> monsterPrefabs;
     [SerializeField]
     private float spawnMinTime;
     [SerializeField]
@@ -26,7 +26,7 @@ public class MonsterSpawner : MonoBehaviour
         
         if (Time.time >= nextSpawnTime)
         {
-            GameObject.Instantiate(monsterPrefab, transform);
+            GameObject.Instantiate(monsterPrefabs[0], transform);
             nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
         }
     }
