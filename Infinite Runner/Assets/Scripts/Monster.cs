@@ -12,7 +12,6 @@ public class Monster : BaseMonster
     [SerializeField]
     private float moveRightSpeed;
 
-    private float moveSpeed;
 
 
     // Start is called before the first frame update
