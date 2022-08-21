@@ -14,7 +14,6 @@ public class Monster : BaseMonster
 
     private float moveSpeed;
 
-    private Animator anim;
 
     // Start is called before the first frame update
     void Start()

@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1872107529471227100}
-  projectilePrefab: {fileID: 2488799353360350427, guid: 1cb4bc271d0796844abc2abf3b4d54d1, type: 3}
-  spawnMinTime: 3
-  spawnMaxTime: 6
   moveSpeed: -5
+  projectilePrefab: {fileID: 2488799353360350427, guid: 1cb4bc271d0796844abc2abf3b4d54d1, type: 3}
+  spawnMinTime: 2
+  spawnMaxTime: 4

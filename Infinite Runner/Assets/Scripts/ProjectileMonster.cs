@@ -13,10 +13,6 @@ public class ProjectileMonster : BaseMonster
 
     private float nextSpawnTime;
 
-    [SerializeField]
-    private float moveSpeed;
-
-    private Animator anim;
 
     void Start()
     {
@@ -30,21 +26,19 @@ public class ProjectileMonster : BaseMonster
         transform.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
         if (Time.time >= nextSpawnTime)
         {
-            Vector3 pos = transform.position;
-            pos += new Vector3(-0.75f, 0.5f, 0f);
-            Quaternion rotation = projectilePrefab.transform.rotation;
-            StartCoroutine(SendProjectile(pos, rotation));
+            StartCoroutine(SendProjectile());
             nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
         }
         anim.SetInteger("AnimState", 0);
     }
 
-    IEnumerator SendProjectile(Vector3 pos, Quaternion rotation)
+    IEnumerator SendProjectile()
     {
-        Debug.Log("start");
         anim.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
+        Vector3 pos = transform.position;
+        pos += new Vector3(-0.75f, 0.5f, 0f);
+        Quaternion rotation = projectilePrefab.transform.rotation;
         GameObject.Instantiate(projectilePrefab, pos, rotation);
-        Debug.Log("end");
     }
 }

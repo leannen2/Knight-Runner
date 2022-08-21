@@ -13,7 +13,7 @@ public class MonsterSpawner : MonoBehaviour
     private float spawnMaxTime;
 
     private float nextSpawnTime;
-    // Start is called before the first frame update
+    
     void Start()
     {
         nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
@@ -23,10 +23,10 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Time.time >= nextSpawnTime)
         {
-            GameObject.Instantiate(monsterPrefabs[1], transform);
+            int randMonster = Random.Range(0, 3);
+            GameObject.Instantiate(monsterPrefabs[randMonster], transform);
             nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
         }
     }
