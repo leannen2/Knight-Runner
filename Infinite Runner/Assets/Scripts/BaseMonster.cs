@@ -7,9 +7,12 @@ public class BaseMonster : MonoBehaviour
     [SerializeField]
     protected Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

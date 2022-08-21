@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMonster : MonoBehaviour
+public class ProjectileMonster : BaseMonster
 {
     [SerializeField]
     private GameObject projectilePrefab;
@@ -16,8 +16,11 @@ public class ProjectileMonster : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
+    private Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
     }
 
@@ -30,8 +33,18 @@ public class ProjectileMonster : MonoBehaviour
             Vector3 pos = transform.position;
             pos += new Vector3(-0.75f, 0.5f, 0f);
             Quaternion rotation = projectilePrefab.transform.rotation;
-            GameObject.Instantiate(projectilePrefab, pos, rotation);
+            StartCoroutine(SendProjectile(pos, rotation));
             nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
         }
+        anim.SetInteger("AnimState", 0);
+    }
+
+    IEnumerator SendProjectile(Vector3 pos, Quaternion rotation)
+    {
+        Debug.Log("start");
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Instantiate(projectilePrefab, pos, rotation);
+        Debug.Log("end");
     }
 }

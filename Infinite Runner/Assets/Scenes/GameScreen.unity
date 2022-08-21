@@ -1751,6 +1751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5483897357767938250, guid: 6726393faf147d049b33af787b9d4020, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5483897357767938261, guid: 6726393faf147d049b33af787b9d4020, type: 3}
       propertyPath: pauseScreen
       value: 

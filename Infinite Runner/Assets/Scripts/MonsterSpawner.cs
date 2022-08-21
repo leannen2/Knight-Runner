@@ -26,7 +26,7 @@ public class MonsterSpawner : MonoBehaviour
         
         if (Time.time >= nextSpawnTime)
         {
-            GameObject.Instantiate(monsterPrefabs[0], transform);
+            GameObject.Instantiate(monsterPrefabs[1], transform);
             nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
         }
     }
