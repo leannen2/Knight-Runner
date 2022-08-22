@@ -40,9 +40,7 @@ public class Menu : MonoBehaviour
     public void Restart()
     {
         //Add code here to restart the game
-        SceneManager.LoadScene("GameScreen");
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
+        GameStateManager.Restart();
     }
 
     public static void Quit()

@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
 
     private Animator anim;
+    private AudioManager instance;
 
     private bool jump;//jumping limitation
 
@@ -51,6 +52,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         jump = true;
+        //AudioManager.instance.Stop("menu");
+        AudioManager.instance.Play("gaming");
 
         //Here is where you should initalize fields.
     }
@@ -105,6 +108,9 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Monster")
         {
             SetHighScore();
+            AudioManager.instance.Stop("gaming");
+            AudioManager.instance.Play("gameover");
+            AudioManager.instance.Play("menu");
             GameStateManager.GameOver();
 
         }
@@ -128,6 +134,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Despawn")
         {
             SetHighScore();
+            AudioManager.instance.Stop("gaming");
+            AudioManager.instance.Play("gameover");
+            AudioManager.instance.Play("menu");
             GameStateManager.GameOver();
         }
     }

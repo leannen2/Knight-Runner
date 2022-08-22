@@ -67,7 +67,9 @@ public class GameStateManager : MonoBehaviour
         //To restart the game we just reload the scene.
         //Reloading the scene means any object that aren't Singletons will be destroyed and recreated 
         //Effectively re-initalizing them to their basic starting state.
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameScreen");
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
     }
     
     public static void TogglePause(GameObject pauseScreen)
