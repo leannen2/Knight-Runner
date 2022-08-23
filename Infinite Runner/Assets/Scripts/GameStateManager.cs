@@ -45,7 +45,6 @@ public class GameStateManager : MonoBehaviour
 
         //Put other inialization for you game state here
         //Time.timeScale = 1;
-
     }
 
 
@@ -57,6 +56,7 @@ public class GameStateManager : MonoBehaviour
         //PillarSpawner.Swtich = 0;
         //OnGameOver();
         //This invokes the game over screen - here we are calling all the methods that subscribed to this action. 
+        AudioManager.instance.Play("gameover");
         SceneManager.LoadScene(0);
 
     }
