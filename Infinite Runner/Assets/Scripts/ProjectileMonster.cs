@@ -20,7 +20,6 @@ public class ProjectileMonster : BaseMonster
         nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);

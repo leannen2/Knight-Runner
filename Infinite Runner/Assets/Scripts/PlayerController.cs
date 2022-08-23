@@ -34,15 +34,15 @@ public class PlayerController : MonoBehaviour
     [Header("Pause Menu")]
     [SerializeField]
     private GameObject pauseScreen;
-    private bool Pause;
-    // Start is called before the first frame update
+
+    [Header("Game Over")]
+    [SerializeField]
+    private GameObject gameOverText;
     void Awake()
     {
         attackField.SetActive(false);
         score = 0;
         scoreDisplay.text = score.ToString();
-
-        Pause = false;
 
         upForce = 5;
 
@@ -98,13 +98,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        //This function gets called when the collider on this object comes in contact with another collider.
-
-        //If the player runs into a pillar object we want to end the game.
         if(collision.gameObject.tag == "Monster")
         {
-            SetHighScore();
-            GameStateManager.GameOver();
+            StartCoroutine(GameOver());
+            //SetHighScore();
+            //GameStateManager.GameOver();
 
         }
 
@@ -116,18 +114,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        //This method gets called when this object collides with another object that has it's collider set to "trigger" mode.
-
-        //If the player enters a score trigger we want to increase the score and update the score display
-
-        //If the player falls out of the world we want to end the game.
-            //GameStateManager.GameOver();
         // Leanne: Call Game Over when player gets pushed off the screen
         if (collision.gameObject.tag == "Despawn")
         {
-            SetHighScore();
-            GameStateManager.GameOver();
+            StartCoroutine(GameOver());
+            //SetHighScore();
+            //GameStateManager.GameOver();
         }
     }
 
@@ -142,12 +134,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, 0);
         return raycastHit.collider != null;
-    }
-
-    private void Damage()
-    {
-        
-    }   
+    } 
 
     private void SetHighScore()
     {
@@ -170,5 +157,16 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }    
+    }
+
+    IEnumerator GameOver()
+    {
+        // stop game music here
+        GetComponent<Renderer>().enabled = false;
+        gameOverText.gameObject.SetActive(true);
+        AudioManager.instance.Play("gameover");
+        SetHighScore();
+        yield return new WaitForSeconds(3);
+        GameStateManager.GameOver();
     }
 }

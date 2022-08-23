@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3723178089952068046}
   - component: {fileID: 3612907845417272594}
   - component: {fileID: 3670208113726640724}
+  - component: {fileID: 6391594415259437287}
   - component: {fileID: 3551177556153059690}
   - component: {fileID: 3678918207064779394}
   - component: {fileID: 3702765141476062712}
-  - component: {fileID: 3727624948191705819}
   m_Layer: 0
   m_Name: RunningMonster
   m_TagString: Monster
@@ -72,6 +72,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6391594415259437287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728450325657009804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea427c43ea0646543a8ca9de6687ba5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 3678918207064779394}
+  moveSpeed: 0
+  moveLeftSpeed: -8
+  moveRightSpeed: 1
 --- !u!212 &3551177556153059690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,21 +187,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.2}
   m_EdgeRadius: 0
---- !u!114 &3727624948191705819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728450325657009804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d687e58a9a595e0478c6f2186eb9c409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  moveLeftSpeed: -8
-  moveRightSpeed: 1
 --- !u!1 &3728907474797608770
 GameObject:
   m_ObjectHideFlags: 0

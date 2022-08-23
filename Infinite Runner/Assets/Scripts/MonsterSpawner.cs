@@ -17,10 +17,8 @@ public class MonsterSpawner : MonoBehaviour
     void Start()
     {
         nextSpawnTime = Time.time + Random.Range(spawnMinTime, spawnMaxTime);
-        //GameObject.Instantiate(monsterPrefab, transform);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time >= nextSpawnTime)
