@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     private bool jump;//jumping limitation
+    AudioSource audioSource;
 
     [Header("Pause Menu")]
     [SerializeField]
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         jump = true;
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator GameOver()
     {
         // stop game music here
+        audioSource.mute = !audioSource.mute;
         GetComponent<Renderer>().enabled = false;
         gameOverText.gameObject.SetActive(true);
         AudioManager.instance.Play("gameover");
