@@ -51,20 +51,20 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         jump = true;
-        //Here is where you should initalize fields.
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //Detect if the key is pressed down.
+
         if(Input.GetKeyDown(KeyCode.W))
         {
             //jump
             Jump();
         }
-            //Detect if the key is pressed down.
+
         if (Input.GetKeyDown(KeyCode.S))
         {
             //Dash
@@ -101,8 +101,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Monster")
         {
             StartCoroutine(GameOver());
-            //SetHighScore();
-            //GameStateManager.GameOver();
+
 
         }
 
@@ -118,11 +117,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Despawn")
         {
             StartCoroutine(GameOver());
-            //SetHighScore();
-            //GameStateManager.GameOver();
+
         }
     }
-
+        //visual attack range
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

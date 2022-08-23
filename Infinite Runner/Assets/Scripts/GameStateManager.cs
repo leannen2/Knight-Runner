@@ -35,7 +35,6 @@ public class GameStateManager : MonoBehaviour
 
     public static void GameOver()
     {
-        //AudioManager.instance.Play("gameover");
         SceneManager.LoadScene(0);
 
     }
