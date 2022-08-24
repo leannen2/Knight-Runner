@@ -7,51 +7,48 @@ public class Menu : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseScreen;
-    //This method gets called when the object is first created. It will get called even if the object is disabled.
+
+    [SerializeField]
+    private GameObject instructionsCanvas;
+
     public void Awake()
     {
-        //This object is subcribing to that Action in the Game State Manager. We will talk about this more indepth later in the Quarter and in GDIM 32
-        GameStateManager.OnGameOver += Open;
-
-        //Make sure this object is not visible when the game starts
         gameObject.SetActive(true);
         
     }
 
-    //This method gets called when this object is destroyed.
     public void OnDestroy()
     {
-        //Because the Game State Manager is going to persist across scene loads & reloads, we need to make sure that when this object goes away it unsubscribes from the action first.
-        GameStateManager.OnGameOver -= Open;
     }
 
-   //A method to Open the menu - We have this setup with the Action subscription to get called everytime the Game State Manager says the game is over.
     public void Open()
     {
-        //Show the menu
-        //GameObject.Find("Menu").SetActive(true);
         gameObject.SetActive(true);  
-        //Do any other menu opening code.
-            
-       
     }
 
-    //A method that we want to hook up to when the restart button gets pressed
     public void Restart()
     {
-        //Add code here to restart the game
         GameStateManager.Restart();
     }
 
     public static void Quit()
     {
-        //quit the application
         Application.Quit();
     }
 
     public void Resume()
     {
         GameStateManager.TogglePause(pauseScreen);
+    }
+
+    public void OpenInstructionsCanvas()
+    {
+        instructionsCanvas.gameObject.SetActive(true);
+    }
+
+    public void CloseInstructionsCanvas()
+    {
+        instructionsCanvas.gameObject.SetActive(false);
     }
 
 }

@@ -9,7 +9,6 @@ public class field : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            Debug.Log("hit monster");
             Destroy(collision.gameObject);
         }
     }

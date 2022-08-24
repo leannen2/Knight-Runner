@@ -160,7 +160,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        // stop game music here
         audioSource.mute = !audioSource.mute;
         GetComponent<Renderer>().enabled = false;
         gameOverText.gameObject.SetActive(true);

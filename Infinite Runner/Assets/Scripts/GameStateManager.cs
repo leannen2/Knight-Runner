@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static Action OnGameOver;
 
     private static GameStateManager _instance;
 
