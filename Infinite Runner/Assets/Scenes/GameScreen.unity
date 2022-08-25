@@ -840,6 +840,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8252532107226567549, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8252532107226567551, guid: e7c5e1da09e71f949a8d524580f8092d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -931,6 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 514528314}
+  instructionsCanvas: {fileID: 0}
 --- !u!114 &514528317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +2029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 442.03, y: 244.5}
+  m_AnchoredPosition: {x: 534, y: 286}
   m_SizeDelta: {x: 269.0691, y: 74.1082}
   m_Pivot: {x: 1, y: 1}
 --- !u!1001 &1822998766

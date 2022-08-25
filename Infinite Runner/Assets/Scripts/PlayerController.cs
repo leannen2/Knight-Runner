@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody2D rb;  //The rigid body is a Unity class that is used for physics objects. We can apply forces to move a rigidbody
+    private Rigidbody2D rb;  
     [SerializeField]
     private float upForce; //This is the force that we will want to apply to the rigidbody
     [SerializeField]
@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Score")]
     [SerializeField]
-    private Text scoreDisplay; //This is a Unity UI Text Object that you can display the score in by setting the text field of this object.
-    private float score; //An internal field to store the score in.
+    private Text scoreDisplay;
+    private float score;
 
     [Header("Attack")]
     [SerializeField] private GameObject attackField;
@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if(collision.gameObject.tag == "Monster")
         {
             StartCoroutine(GameOver());
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Leanne: Call Game Over when player gets pushed off the screen
+
         if (collision.gameObject.tag == "Despawn")
         {
             StartCoroutine(GameOver());

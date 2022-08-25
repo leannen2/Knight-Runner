@@ -17,10 +17,6 @@ public class Menu : MonoBehaviour
         
     }
 
-    public void OnDestroy()
-    {
-    }
-
     public void Open()
     {
         gameObject.SetActive(true);  
